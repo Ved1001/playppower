@@ -1,0 +1,146 @@
+.footer {
+  background-color: #F7F7F7;
+  border-top: 1px solid #DDDDDD;
+  margin-top: 64px;
+  color: #222222;
+}
+
+.container {
+  max-width: var(--max-width, 1280px);
+  margin: 0 auto;
+  padding: 48px var(--content-padding, 40px) 24px;
+}
+
+.topGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.column h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.column a {
+  color: #222222;
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.column a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.highlight {
+  font-weight: 600;
+  background: linear-gradient(90deg, #FF385C, #D70466);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 1 !important;
+}
+
+.bottomBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  font-size: 14px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.bottomLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.bottomLeft a {
+  color: #222222;
+  text-decoration: none;
+}
+
+.bottomLeft a:hover {
+  text-decoration: underline;
+}
+
+.dot {
+  color: #717171;
+}
+
+.bottomRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.localeBtn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222222;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.localeBtn:hover {
+  text-decoration: underline;
+}
+
+.rupee {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+  margin-left: 8px;
+}
+
+.socials a {
+  color: #222222;
+  transition: color 0.2s;
+}
+
+.socials a:hover {
+  color: #717171;
+}
+
+@media (max-width: 1024px) {
+  .topGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .topGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .bottomBar {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+}

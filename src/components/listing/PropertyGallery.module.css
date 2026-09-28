@@ -1,0 +1,153 @@
+.galleryContainer {
+  position: relative;
+  width: 100%;
+}
+
+.grid {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 4px;
+  height: auto;
+  aspect-ratio: 4/3; /* Natural mobile crop */
+}
+
+.mainImageWrapper {
+  position: relative;
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  background-color: var(--color-bg-secondary, #F7F7F7);
+}
+
+.subGrid {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 4px;
+}
+
+.subImageWrapper {
+  position: relative;
+  width: 80vw;
+  scroll-snap-align: start;
+  background-color: var(--color-bg-secondary, #F7F7F7);
+}
+
+/* Desktop Layout */
+@media (min-width: 768px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    height: 520px; /* Taller height prevents excessive horizontal cropping */
+    max-height: 65vh;
+    aspect-ratio: auto;
+  }
+
+  .mainImageWrapper {
+    flex: auto;
+  }
+
+  .subGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 8px;
+    width: auto;
+  }
+
+  .subImageWrapper {
+    width: auto;
+  }
+}
+
+.imageReal {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; /* Ensure subject stays centered */
+  transition: transform var(--transition-slow), filter var(--transition-base);
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .mainImageWrapper:hover .imageReal,
+  .subImageWrapper:hover .imageReal {
+    filter: brightness(0.9);
+  }
+}
+
+/* Story Trigger Button */
+.storyTriggerBtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.4);
+  backdrop-filter: blur(8px);
+  padding: 12px 24px;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  z-index: 10;
+}
+
+.storyTriggerBtn:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: translate(-50%, -50%) scale(1.05);
+  border-color: rgba(255,255,255,0.8);
+}
+
+.storyRing {
+  position: absolute;
+  inset: -4px;
+  border-radius: 40px;
+  border: 2px solid transparent;
+  background: linear-gradient(45deg, #FF385C, #E61E4D, #D70466) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  animation: rotateRing 4s linear infinite;
+}
+
+@keyframes rotateRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.showAllButton {
+  position: absolute;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  background-color: white;
+  border: 1px solid var(--color-border-dark);
+  padding: 7px 15px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.2s;
+  box-shadow: var(--shadow-sm);
+  z-index: 10;
+}
+
+.showAllButton:active {
+  transform: scale(0.96);
+}
+
+.showAllButton:hover {
+  background-color: var(--color-hover, #F7F7F7);
+}

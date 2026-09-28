@@ -1,0 +1,80 @@
+.container {
+  margin-top: var(--space-2);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) 0;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.header:hover {
+  color: var(--color-text-primary);
+}
+
+.headerText {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.chevron {
+  transition: transform var(--transition-fast);
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.contentWrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 300ms ease;
+}
+
+.contentOpen {
+  max-height: 500px; /* Safe upper bound */
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-2) 0 var(--space-3) var(--space-2);
+  border-left: 2px solid var(--color-border-light);
+  margin-top: var(--space-1);
+}
+
+.listItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.badge {
+  display: inline-flex;
+  align-self: flex-start;
+  font-size: 10px;
+  font-weight: var(--font-weight-bold);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badgeListing { background: #E3F2FD; color: #1565C0; }
+.badgeReviews { background: #F3E5F5; color: #7B1FA2; }
+.badgeHost { background: #E8F5E9; color: #2E7D32; }
+.badgeSafety { background: #FFEBEE; color: #C62828; }
+.badgePolicy { background: #FFF3E0; color: #EF6C00; }
+.badgeInferred { background: #F5F5F5; color: #616161; }
+.badgeDefault { background: #F5F5F5; color: #616161; }
+
+.evidenceText {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+}

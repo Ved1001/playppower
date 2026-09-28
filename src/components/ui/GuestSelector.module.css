@@ -1,0 +1,97 @@
+.guestDropdown {
+  padding: 16px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.15);
+  min-width: 320px;
+  cursor: default;
+}
+
+.guestRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.guestRow:last-of-type {
+  border-bottom: none;
+}
+
+.guestInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.guestInfo strong {
+  font-size: 16px;
+  color: #222222;
+  font-weight: 600;
+}
+
+.guestInfo span {
+  font-size: 14px;
+  color: #717171;
+  margin-top: 4px;
+}
+
+.guestControls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.guestControls button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #B0B0B0;
+  background: white;
+  color: #717171;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.guestControls button:hover:not(:disabled) {
+  border-color: #222222;
+  color: #222222;
+}
+
+.guestControls button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.guestControls span {
+  width: 16px;
+  text-align: center;
+  font-size: 16px;
+  color: #222222;
+}
+
+.footerInfo {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #717171;
+  line-height: 1.4;
+}
+
+.closeAction {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.closeAction button {
+  background: none;
+  border: none;
+  text-decoration: underline;
+  font-weight: 600;
+  cursor: pointer;
+  color: #222222;
+}

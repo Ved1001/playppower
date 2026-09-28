@@ -1,7 +1,6 @@
+import { propertyData } from '@/data/propertyData';
+import ListingPage from '@/components/listing/ListingPage';
+
 export default function Home() {
-  return (
-    <main>
-      <div>Hello world!</div>
-    </main>
-  );
+  return <ListingPage property={propertyData} />;
 }

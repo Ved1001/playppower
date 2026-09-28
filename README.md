@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies and start the development server:
 
 ```bash
 npm run dev
@@ -18,6 +18,22 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+## Deploy on Render
+
+1. Push this repository to GitHub.
+2. In Render, choose **New +** and select **Blueprint**. Render will detect `render.yaml`.
+3. When Render asks for `NEXT_PUBLIC_SITE_URL`, leave it empty for the first deploy.
+4. After deployment, copy the generated `onrender.com` URL into `NEXT_PUBLIC_SITE_URL` in Render and redeploy.
+
+For a manual Web Service, use **Node** with these commands:
+
+```text
+Build Command: npm ci && npm run build
+Start Command: npm run start
+Node version: 22
+```
+
+The service listens on Render's `PORT` automatically through `next start`. No database or additional environment variables are required for the current frontend-only version.
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
