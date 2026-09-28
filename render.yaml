@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: airbnb-listing-clone
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: NEXT_PUBLIC_SITE_URL
+        sync: false
